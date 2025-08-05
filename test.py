@@ -3,7 +3,7 @@ import seaborn as sns
 import numpy as np
 
 ### Read in Data ###
-url = "<RAW_FILE_URL_HERE>"  # Replace with your GitHub raw CSV link
+url = "https://raw.githubusercontent.com/AnishS04/CS4375_Term_Project/refs/heads/main/AAPL.csv"
 df = pd.read_csv(url)
 
 ### Data Cleaning ### 
