@@ -26,3 +26,40 @@ min_val = df['Close'].min()                                # normalize target va
 max_val = df['Close'].max()
 df['Close_scaled'] = (df['Close'] - min_val) / (max_val - min_val + 1e-8)
 
+df.set_index('Date', inplace = True)                       # Set Date as index 
+
+
+### Feature Engineering ###
+
+# Add time-based features
+df['day_of_week'] = df.index.dayofweek
+df['month'] = df.index.month
+df['quarter'] = df.index.quarter
+df['year'] = df.index.year
+
+# Add lag features (1 to 5 days)
+for lag in range(1, 6):
+    df[f'Close_lag_{lag}'] = df['Close_scaled'].shift(lag)
+
+# Add rolling statistics
+df['rolling_mean_5'] = df['Close_scaled'].rolling(window=5).mean()
+df['rolling_std_5'] = df['Close_scaled'].rolling(window=5).std()
+
+df.dropna(inplace=True)                                   # Drop NaN rows from lag/rolling features 
+
+### Train - Test Split ###
+sequence_length = 20
+split_fraction = 0.8
+
+features = df.drop(columns=['Close', 'Adj Close'])        # Keep only features as these are redundant 
+
+feature_data = features.values                            # Convert to numpy array
+# Now a 2D Array of [n_timesteps, n_features]
+
+#Split by time 
+split_index = int(len(feature_data) * split_fraction)
+train_data = feature_data[:split_index]
+test_data = feature_data[split_index:]
+
+
+
