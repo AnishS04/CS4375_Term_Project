@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import numpy as np
+import matplotlib.pyplot as plt
 
 ### Read in Data ###
 url = "https://raw.githubusercontent.com/AnishS04/CS4375_Term_Project/refs/heads/main/AAPL.csv"
@@ -46,6 +47,45 @@ df['rolling_mean_5'] = df['Close_scaled'].rolling(window=5).mean()
 df['rolling_std_5'] = df['Close_scaled'].rolling(window=5).std()
 
 df.dropna(inplace=True)                                   # Drop NaN rows from lag/rolling features 
+
+### EDA ###
+
+# Correlation matrix + heatmap 
+plt.figure(figsize=(12, 10))                             
+corr_matrix = df.corr()
+sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
+
+# Price over time plot
+plt.figure(figsize=(14, 5))                              
+sns.lineplot(data=df, x=df.index, y='Close_scaled')
+plt.title("Scaled Closing Price Over Time")
+plt.xlabel("Date")
+plt.ylabel("Close Scaled")
+plt.grid(True)
+plt.show()
+
+# Closed_scale with 5 day Rolling Mean 
+plt.figure(figsize=(14, 5))                             
+sns.lineplot(data=df, x=df.index, y='Close_scaled', label='Close_scaled')
+sns.lineplot(data=df, x=df.index, y='rolling_mean_5', label='5-Day Rolling Mean')
+plt.title("Close Scaled vs. 5-Day Rolling Mean")
+plt.xlabel("Date")
+plt.ylabel("Value")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+#Daily Volatility (rolling std deviation)
+plt.figure(figsize=(14, 4))
+sns.lineplot(data=df, x=df.index, y='rolling_std_5', color='red')
+plt.title("5-Day Rolling Standard Deviation (Volatility)")
+plt.xlabel("Date")
+plt.ylabel("Rolling Std Dev")
+plt.grid(True)
+plt.show()
+
 
 ### Train - Test Split ###
 sequence_length = 20
