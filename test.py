@@ -3,6 +3,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 ### Read in Data ###
 url = "https://raw.githubusercontent.com/AnishS04/CS4375_Term_Project/refs/heads/main/AAPL.csv"
 df = pd.read_csv(url)
@@ -86,20 +87,62 @@ plt.ylabel("Rolling Std Dev")
 plt.grid(True)
 plt.show()
 
+def sigmoid(x):
+    return 1 / (1 + np.exp(-np.clip(x, -500, 500)))  
 
-### Train - Test Split ###
-sequence_length = 20
-split_fraction = 0.8
+def tanh(x):
+    return np.tanh(np.clip(x, -500, 500)) 
 
-features = df.drop(columns=['Close', 'Adj Close'])        # Keep only features as these are redundant 
+def softmax(x):
+    exp_x = np.exp(x - np.max(x))  
+    return exp_x / np.sum(exp_x)
 
-feature_data = features.values                            # Convert to numpy array
-# Now a 2D Array of [n_timesteps, n_features]
+def sigmoid_derivative(x):
+    return x * (1 - x)
 
-#Split by time 
-split_index = int(len(feature_data) * split_fraction)
-train_data = feature_data[:split_index]
-test_data = feature_data[split_index:]
+def tanh_derivative(x):
+    return 1 - x * x
 
+def xavier_init(size_in, size_out):
+    return np.random.randn(size_in, size_out) / np.sqrt(size_in)
+
+class StockLSTM:
+    def __init__(self, input_size, hidden_size, output_size, num_epochs=100, learning_rate=0.01):
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.output_size = output_size
+        self.num_epochs = num_epochs
+        self.learning_rate = learning_rate
+        
+        # Initialize weights and biases for all gates
+        # Forget gate
+        self.wf = xavier_init(input_size + hidden_size, hidden_size)
+        self.bf = np.zeros((1, hidden_size))
+        
+        # Input gate
+        self.wi = xavier_init(input_size + hidden_size, hidden_size)
+        self.bi = np.zeros((1, hidden_size))
+        
+        # Candidate gate
+        self.wc = xavier_init(input_size + hidden_size, hidden_size)
+        self.bc = np.zeros((1, hidden_size))
+        
+        # Output gate
+        self.wo = xavier_init(input_size + hidden_size, hidden_size)
+        self.bo = np.zeros((1, hidden_size))
+        
+        # Final output layer
+        self.wy = xavier_init(hidden_size, output_size)
+        self.by = np.zeros((1, output_size))
+        
+    
+    ### CODE FORWARD PASS FUNCTION ###
+    def forward(self, inputs):
+        outputs = []
+        ## LOGIC ##
+        return outputs 
+
+    ### CODE BACKWARD PROPOGATION FUNCTION ###
+    
 
 
