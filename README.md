@@ -10,7 +10,7 @@
 
 </div>
 
-# NumPy LSTM (from scratch) for AAPL Price Forecasting
+# LSTM From Scratch: Predicting Time Series Stock Prices
 
 ## Overview
 This project implements a **from-scratch LSTM in NumPy** (no deep-learning libraries) to forecast the **next day’s closing price** of AAPL from recent history.  
