@@ -1,7 +1,7 @@
 # CS4375_Term_Project
 <div align="center">
 
-# University of Texas at Dallas  
+# The University of Texas at Dallas  
 **Computer Science Department**
 
 **Jeffrey Chou · Josetta Reyes · Anish Saravanan · Bright Gao**  
