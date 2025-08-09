@@ -1,7 +1,9 @@
 # CS4375_Term_Project
 <div align="center">
+
 # LSTM From Scratch: Predicting Time Series Stock Prices
-</div>
+ <div align="center">
+   
 # The University of Texas at Dallas  
 **Computer Science Department**
 
@@ -10,8 +12,6 @@
 **Submission Date: August 8, 2025**
 
 </div>
-
-# LSTM From Scratch: Predicting Time Series Stock Prices
 
 ## Overview
 This project implements a **from-scratch Long Short-Term Memory (LSTM)** network in **NumPy** to predict the **next day’s closing price** of Apple Inc. (AAPL) stock using historical daily prices.  
