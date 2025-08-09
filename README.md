@@ -1,8 +1,5 @@
 # CS4375_Term_Project
 <div align="center">
-
-# LSTM From Scratch: Predicting Time Series Stock Prices
- <div align="center">
    
 # The University of Texas at Dallas  
 **Computer Science Department**
@@ -11,6 +8,7 @@
 **CS 4375.5U1 — Introduction to Machine Learning — Su25**  
 **Submission Date: August 8, 2025**
 
+# LSTM From Scratch: Predicting Time Series Stock Prices
 </div>
 
 ## Overview
