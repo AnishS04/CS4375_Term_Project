@@ -1,6 +1,7 @@
 # CS4375_Term_Project
 <div align="center">
-
+# LSTM From Scratch: Predicting Time Series Stock Prices
+</div>
 # The University of Texas at Dallas  
 **Computer Science Department**
 
