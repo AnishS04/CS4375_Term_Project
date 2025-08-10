@@ -62,7 +62,7 @@ Edit these in `lstm2.py` to adjust experiments:
 
 | Parameter        | Description                          | Example Value |
 |------------------|--------------------------------------|---------------|
-| `first_date_str` | Start date for dataset               | `"2018-03-25"`|
+| `first_date_str` | Start date for dataset               | `"2015-03-25"`|
 | `last_date_str`  | End date for dataset                 | `"2019-03-25"`|
 | `n`              | Lookback window length               | `3`           |
 | `hidden`         | Number of LSTM hidden units          | `64`          |
@@ -83,7 +83,7 @@ Edit these in `lstm2.py` to adjust experiments:
 
 Example experiment log entry:
 ```
-1, epochs=100, lr=0.001, lookback n=3, hidden=64, Train RMSE=0.58, Test RMSE=0.57, Train R²=0.12, Test R²=0.11
+1, epochs=100, lr=0.001, lookback n=3, hidden=64, Train RMSE=6.62, Test RMSE=0.22, Train R²=0.91, Test R²=0.22
 ```
 
 ---
