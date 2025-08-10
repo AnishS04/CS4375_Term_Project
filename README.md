@@ -6,7 +6,7 @@
 
 **Jeffrey Chou · Josetta Reyes · Anish Saravanan**  
 **CS 4375.5U1 — Introduction to Machine Learning — Su25**  
-**Submission Date: August 8, 2025**
+**Submission Date: August 9, 2025**
 
 # LSTM From Scratch: Predicting Time Series Stock Prices
 </div>
