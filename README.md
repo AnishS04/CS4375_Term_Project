@@ -114,7 +114,12 @@ Example experiment log entry:
 - Apple Inc. (AAPL) Daily Closing Price Dataset — Public GitHub source  
 - Hochreiter, S., Schmidhuber, J., *Long Short-Term Memory*, Neural Computation, 1997  
 - Goodfellow, I., Bengio, Y., Courville, A., *Deep Learning*, MIT Press, 2016
-
+- Greff, R. K. Srivastava, J. Koutník, et al., “LSTM: A Search Space Odyssey,” IEEE TPAMI, 2017
+- Graves, A.-R. Mohamed, and G. Hinton, “Speech Recognition with Deep Recurrent Neural Networks,” ICASSP, 2013.
+- Lim and S. Zohren, “Time-Series Forecasting With Deep Learning: A Survey,” Philosophical Transactions A, 2021.
+- Pascanu, T. Mikolov, and Y. Bengio, “On the difficulty of training recurrent neural networks,”
+- Bengio, P. Simard, and P. Frasconi, “Learning long-term dependencies with gradient descent is difficult,”
+- Crow, “Stock Market Dataset,” Kaggle. [Online]
 ---
 
 ## Important Note
