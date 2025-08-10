@@ -4,7 +4,7 @@
 # The University of Texas at Dallas  
 **Computer Science Department**
 
-**Jeffrey Chou · Josetta Reyes · Anish Saravanan · Bright Gao**  
+**Jeffrey Chou · Josetta Reyes · Anish Saravanan**  
 **CS 4375.5U1 — Introduction to Machine Learning — Su25**  
 **Submission Date: August 8, 2025**
 
